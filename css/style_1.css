@@ -1,0 +1,134 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+.bgground{
+    background-image: url(../../image/background.jpg);
+    background-size: cover;
+    background-position: center;
+    width: fit-content;
+    height: 100vh;
+    width: 100vw;
+      
+}
+:root{
+    --mainColor: rgba(0, 0, 255, 0.493);
+    --secondColor: black;
+    --Color: white;
+    --size: 18px;
+    --weight: bold;
+    --border: 4px solid var(var(--secondColor));
+    --colorLink: red;
+    --sizeMin : 16px;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+/* strat header  */
+.logo{
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+.logo img{
+    max-width: 80px;
+    height: fit-content;
+    border-radius: 50%;
+}
+header{
+    position: relative;
+    display: flex;
+    background-color: var(--mainColor);
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+/* start ul and li  */
+
+.container nav ul {
+     list-style: none;
+     display: flex;
+     /* list-style-type:none; */
+    text-align: center;
+}
+.container nav{
+    width: 100%;
+    height: 1fr;
+}
+
+.container nav ul li{
+    margin: 0 auto;
+    padding: 4px 10px;
+}
+
+.container nav ul li:last-child{
+    background-image: linear-gradient(toleft , red  ,black , yellow);
+    border-radius: 10px;
+}
+
+.container nav ul li a{
+    text-decoration: none;
+    color: var(--Color);
+    font-weight: var(--wight);
+    font-size: var(--size)
+}
+.container nav ul li :after{
+    position: absolute;
+    content: "";
+    left:0;
+    top: -4px;
+    border-top: 3px solid var(--colorLink);
+}
+.container nav ul li :after:hover{
+    left: 100%;
+    
+}
+
+@media (max-width: 768px){
+    .container .logo h3{
+        font-size: var(--sizeMin);
+    }
+    .container nav ul li a{
+        font-size: var(--sizeMin);
+    }
+}
+
+
+
+/* end header  */
+
+/* start grid  */
+.container {
+    display: grid;
+    grid-template-rows: 13% 90% 15%;
+    grid-template-areas: 
+    "head"
+    "maine"
+    "foot";
+
+}
+header{
+    grid-area: head;
+}
+main{
+    grid-area: maine;
+}
+footer{
+    grid-area: foot;
+}
+
+/* end grid  */
+
+footer{
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondColor);
+    color: var(--Color);
+}
