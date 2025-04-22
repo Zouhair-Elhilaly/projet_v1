@@ -1,3 +1,22 @@
+.container{
+    margin: 10% auto;
+    background-color: beige;
+    display: flex;
+    justify-content: space-around;
+}
+.container  .left{
+    /* margin: 0 auto; */
+}
+
+.container  .left img{
+    width: 200px;
+  
+}
+
+
+
+/* end modification  */
+
 .login-form {
     width: 80%;
     max-width: 400px;

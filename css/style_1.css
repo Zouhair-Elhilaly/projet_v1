@@ -2,19 +2,38 @@
     box-sizing:border-box;
     margin:0;
     padding: 0;
+    font-family: serif;
 }
 html{
     scroll-behavior: smooth;
 }
 .bgground{
-    background-image: url(../../image/background.jpg);
+    /* background-image: url(../../image/background.jpg); */
+    background-image: url(../../image/);
     background-size: cover;
     background-position: center;
     width: fit-content;
     height: 100vh;
     width: 100vw;
-      
+    box-shadow: 0 0 2px red;
 }
+
+video{
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    position: fixed;
+}
+
+.global{
+    position: relative;
+    z-index: 1;
+
+}
+
 :root{
     --mainColor: rgba(0, 0, 255, 0.493);
     --secondColor: black;
@@ -24,6 +43,8 @@ html{
     --border: 4px solid var(var(--secondColor));
     --colorLink: red;
     --sizeMin : 16px;
+    --colorFooter: black;
+    --transitionIcon: .3s;
 }
 
 .container{
@@ -37,10 +58,24 @@ html{
     align-items: center;
     width: 40%;
 }
+.logo h3{
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 20px white;
+    margin-left: 3px; 
+    text-transform: uppercase;
+    /* font-size: 24px; */
+}
+.logo h3:first-letter{
+    font-size: 20px;
+    text-shadow:  0 0 4px white;
+    /* border: 1px solid red; */
+    /* background-color:rgb(135, 151, 26) */
+}
 .logo img{
     max-width: 80px;
     height: fit-content;
-    border-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
 }
 header{
     position: relative;
@@ -48,6 +83,19 @@ header{
     background-color: var(--mainColor);
     /* justify-content: space-between; */
     align-items: center;
+    background-attachment: scroll;
+   
+}
+
+header .sign{ 
+    padding: 7px 14px;
+    background-image: linear-gradient(to left,gray);
+    border-radius: 10px;
+    border: none !important;
+}
+header .sign:hover{
+    transition: all var(--transitionIcon) linear;
+        box-shadow: 0 0 10px white;
 }
 
 /* start ul and li  */
@@ -79,17 +127,31 @@ header{
     font-weight: var(--wight);
     font-size: var(--size);
     text-transform: capitalize;
+    letter-spacing: 1px;
+    
 }
-.container nav ul li :after{
+.container nav ul li a:hover{
+    transition: var(--transitionIcon);
+    margin-bottom: 4px;
+    border-bottom: 3px solid black;
+}
+
+.container nav ul li a :after{
     position: absolute;
     content: "";
     left:0;
     top: -4px;
     border-top: 3px solid var(--colorLink);
 }
-.container nav ul li :after:hover{
+.container nav ul li a :after:hover{
     left: 100%;
     
+}
+.container nav ul li :hover{
+    /* background-color: black;
+    height: 100%;
+    padding: 100% 3px;
+    overflow-y: hidden; */
 }
 
 @media (max-width: 768px){
@@ -99,7 +161,13 @@ header{
     .container nav ul li a{
         font-size: var(--sizeMin);
     }
+    .container{
+          width: 100%;
+          
+}  
+    
 }
+
 
 
 
@@ -108,7 +176,7 @@ header{
 /* start grid  */
 .container {
     display: grid;
-    grid-template-rows: 13% 90% 15%;
+    grid-template-rows: 13% 90% 25%;
     grid-template-areas: 
     "head"
     "maine"
@@ -127,9 +195,104 @@ footer{
 
 /* end grid  */
 
+/* start footer  */
+
 footer{
     width: 100%;
     height: 100%;
-    background-color: var(--secondColor);
+    background-color: var(--colorFooter);
     color: var(--Color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* padding: 10px 0; */
 }
+
+footer .contac{
+        /* padding: 10px 0; */
+}
+footer .contac h3{
+    /* padding: 10px 0; */
+    margin: 2px ;
+    text-align: center;
+}
+footer .contac ul{
+   /* display: flex; */
+   justify-content: space-evenly;
+   
+
+}
+footer .contac ul li{
+   list-style: none;
+   
+}
+footer .contac ul li a{
+    text-decoration : none;
+    color: white;
+    margin: 10px auto;
+    color: rgb(144, 141, 141);
+}
+footer .contac ul li a:hover{
+    transition: all var(--transitionIcon) linear;
+    color: white;
+    font-weight: bold;
+}
+@media(max-width: 768px){
+    footer .contac ul li a{
+        margin: 0  4px;
+    }
+}
+
+footer .copy:not(:last-child){
+     margin-bottom: 10px;
+}
+
+footer .icon{
+    line-height: 1.5;
+}
+
+footer .icon h3{
+
+}
+
+footer .icon i{
+    cursor: pointer;
+    margin: 0 4%;
+    background-color: gray;
+    padding: 2px 2px;
+    color: black;
+}
+
+
+footer .icon i:hover{
+    color: white;
+    transition: var(--transitionIcon)
+}
+/* end footer  */
+
+/* start main  */
+main{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+main h3{
+
+}
+
+main img{
+    max-width: 50%;
+    height: 100%;
+    box-shadow: 0 0 4px red;
+}
+
+/* end main  */
+/* / 
+.global{
+     background-image: url(../../image/ceremonie-remise-diplomes-virtuelle-diplome-universite_23-2148571733.jpg); *
+    background-size: cover;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+} */ 
