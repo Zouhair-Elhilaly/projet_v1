@@ -1,83 +1,260 @@
-.container{
-    margin: 10% auto;
-    background-color: beige;
-    display: flex;
-    justify-content: space-around;
+:root {
+  --mainColor: rgba(0, 0, 255, 0.493);
+  --secondColor: black;
+  --Color: white;
+  --size: 18px;
+  --weight: bold;
+  --border: 4px solid var(var(--secondColor));
+  --colorLink: red;
+  --sizeMin: 16px;
+  --colorFooter: black;
+  --transitionIcon: 0.3s;
 }
-.container  .left{
-    /* margin: 0 auto; */
+/* strat header  */
+.logo {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+.logo h3 {
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 20px white;
+  margin-left: 3px;
+  text-transform: uppercase;
+  /* font-size: 24px; */
+}
+.logo h3:first-letter {
+  font-size: 20px;
+  text-shadow: 0 0 4px white;
+  /* border: 1px solid red; */
+  /* background-color:rgb(135, 151, 26) */
+}
+.logo img {
+  max-width: 80px;
+  height: fit-content;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+header {
+  position: relative;
+  display: flex;
+  /* background-color: gray; */
+  align-items: center;
+  /* background-attachment: fixed; */
+  /* position: fixed; */
+  z-index: 99;
+  top: 0;
+  width: 100%;
+  background-color: var(--mainColor);
+}
+@media (max-width: 768px) {
+  header {
+    width: 100%;
+  }
 }
 
-.container  .left img{
-    width: 200px;
-  
+/* header .sign{ 
+    padding: 7px 14px;
+    background-image: linear-gradient(to left,gray);
+    border-radius: 10px;
+    border: none !important;
+} */
+/* header .sign:hover {
+  transition: all 3s linear;
+  box-shadow: 0 0 10px white;
+} */
+
+/* start ul and li  */
+
+nav ul {
+  list-style: none;
+  /* display: flex; */
+  /* list-style-type:none; */
+  /* text-align: center; */
 }
 
+nav ul li a {
+  text-decoration: none;
+  color: var(--Color);
+  font-weight: var(--wight);
+  font-size: var(--size);
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+nav ul li a:hover {
+  transition: var(--transitionIcon);
+  margin-bottom: 4px;
+  border-bottom: 3px solid black;
+}
 
+@media (max-width: 768px) {
+  .logo h3 {
+    font-size: var(--sizeMin);
+  }
+  nav ul li a {
+    font-size: var(--sizeMin);
+  }
+}
+
+/* end header  */
+
+/* *********************************************************************************************************** */
+.container {
+  display: flex;
+  position: relative;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: ". form-center .";
+    background-image: url(../../image/ceremonie-remise-diplomes-virtuelle-diplome-universite_23-2148571733.jpg);
+    background-size: cover;
+  }
+  .container .left {
+    visibility: hidden;
+  }
+  .container .right {
+    position: absolute;
+    grid-area: form-center;
+  }
+}
+.container-2 {
+  height: calc(100vh - 80px);
+}
+.container .left {
+  width: 80%;
+  max-width: 400px !important;
+  height: 60%;
+  box-shadow: 0 0 4px #602dc9;
+  background-image: url(../../image/ceremonie-remise-diplomes-virtuelle-diplome-universite_23-2148571733.jpg);
+  background-size: cover;
+  z-index: -1;
+}
+
+.container .left img {
+  width: 200px;
+}
 
 /* end modification  */
 
-.login-form {
-    width: 80%;
-    max-width: 400px;
+.container .right {
+  width: 80%;
+  max-width: 400px;
+  height: 60%;
+  color: var(--mainColor);
+  border: 2px solid rgb(252, 93, 93);
+  margin-left: 4px;
+  background-image: linear-gradient(to left, rgba(54, 114, 219, 0.37), white);
+  box-shadow: 0 0 10px black;
 }
 
+/* start form  */
+
 .login-form h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .login-form p {
-    margin-bottom: 20px;
-    color: #777;
+  margin-bottom: 20px;
+  color: #777;
 }
 
 .login-form label {
-    font-size: 14px;
-    display: block;
-    margin: 10px 0 5px;
+  font-size: 14px;
+  display: block;
+  margin: 10px 0 5px;
 }
 
 .login-form input[type="text"],
 .login-form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
-
+.login-form input[type="text"]:hover,
+.login-form input[type="password"]:hover {
+  outline: none;
+  box-shadow: 0 0 4px black;
+  transition: all var(--transitionIcon);
+}
+/* 
 .options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+} */
 
 .login-form button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    background-color: #7d3cff;
-    color: white;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: #7d3cff;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s linear;
 }
 
 .login-form button:hover {
-    background-color: #602dc9;
+  background-color: #602dc9;
 }
 
-.signup {
-    margin-top: 15px;
-    font-size: 14px;
-    text-align: center;
+/* .signup {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+} */
+
+/* .signup a {
+  color: #7d3cff;
+  text-decoration: none;
+} */
+
+
+/* start alert  */
+.message{
+   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 4px 0 0;
+  padding: 10px 3px;
+  border-radius: 10px;
 }
 
-.signup a {
-    color: #7d3cff;
-    text-decoration: none;
+.succes {
+  background-color: green;
+  color: white;
+ 
 }
+
+.faild {
+  background-color: red;
+  color: white;
+ 
+}
+
+ .point{
+  font-weight: bold;
+  font-size: 27px;
+  color: white;
+  cursor: pointer;
+  transition: all .3s linear
+}
+.point:hover{
+    color: black;
+
+}
+
+
+/* end alert  */

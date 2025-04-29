@@ -1,0 +1,147 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 24px;
+}
+
+
+/* body{
+    width: 100%;
+    height: 100%;
+} */
+
+/* start grid the element page  */
+.container{
+    display: grid;
+    grid-auto-columns: 20% 1fr;
+    grid-auto-rows: 20% 60% 20%;
+    grid-template-areas: 
+    "navbar headerpage "
+    "navbar mainpage"
+    "navbar footerpage ";
+    width: 100vw;
+    height: 100vh;
+    gap: 5px;
+}
+
+@media (max-width: 768px){
+    .container{
+    grid-auto-rows: 10% 80% 10%;
+    }
+}
+
+/* start header  */
+header{
+    grid-area: headerpage;
+    background-color: gray;
+    /* start header center */
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10% ;
+    width: clac(100% - 10%);
+}
+
+
+
+header .left{
+
+}
+
+header .left h3{
+
+}
+
+@media (max-width: 768px){
+    header .left h3{
+        font-size: 14px;
+    }
+}
+
+header .right{
+    display: flex;
+    align-items: center;
+}
+
+header .right .image{
+
+}
+
+header .right .image img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+@media (max-width: 768px){
+    header .right .image img{
+     height: 50px;
+     width: 50px;
+}
+}
+
+header .right .search{
+
+}
+
+header .right .search label{
+    font-size: 20px;
+}
+
+@media (max-width: 768px){
+    header .right .search label{
+     display: none;
+    }
+}
+
+header .right .search input[type="search"]{
+        width: 150px;;
+        border-radius: 10px;
+        border: none;
+        font-size: 14px;
+        padding: 10px 0;
+}
+
+@media (max-width: 768px ){
+    
+    header .right .search input[type="search"]{
+        height: 20px;
+        margin-left: 4px;  /* partie zayda */
+    }
+}
+
+
+header .right .search input[type="search"]:focus{
+    outline: none;
+
+}
+
+/* end header ********************************************************** */
+
+/* start navbar ********************************************** */
+nav{
+    grid-area: navbar;
+    background-color: rgb(76, 75, 78);
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* end navbar ********************************************** */
+
+
+main{
+    grid-area: mainpage;
+    background-color: rgb(62, 62, 61);
+}
+footer{
+    grid-area: footerpage;
+    background-color: rgb(120, 120, 102);
+}
+/* end grid the element page  */
