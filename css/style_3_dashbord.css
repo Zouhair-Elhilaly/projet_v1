@@ -126,11 +126,60 @@ header .right .search input[type="search"]:focus{
 nav{
     grid-area: navbar;
     background-color: rgb(76, 75, 78);
-    width: 100%;
+    width: 1fr;
+    /* height: 1fr; */
     color: white;
-    display: flex;
-    justify-content: center;
+    display: flex;  
+     justify-content:center;
+    /*
+    flex-direction: column;
+    justify-content: space-around
+    /* justify-content: center; */
+    position: relative; */;
 }
+
+nav .navbar{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+*/
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 20% 60%v 20%;
+   grid-template-areas: 
+   "title"
+   "icon"
+   "setting";
+   color: red;
+   text-align: center;
+ } 
+
+ nav .navbar .title{
+    grid-area: title;
+    background-color: beige;
+    display: flex;
+    align-items: center;
+ }
+
+nav .navbar  .icon{
+    grid-area: icon;
+    background-color: rgb(214, 214, 132);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+}
+nav .navbar .setting{
+    grid-area: setting;
+    background-color: rgb(44, 114, 23);
+}
+
+/* @media (max-width: 768px){
+    nav .navbar > div {
+        font-size: 7px !important;
+        font-weight: normal;
+    }
+} */
 
 
 /* end navbar ********************************************** */

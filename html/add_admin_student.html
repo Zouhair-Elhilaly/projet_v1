@@ -1,0 +1,241 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create student</title>
+</head>
+<-- start style css -->
+<!-- <style>
+
+    body{
+        width: 100vw;
+        height: 100vh;
+        background-color: beige
+    }
+    .container{
+        
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        background-color: aqua;
+    }
+    form{
+        background-color:beige;
+        height: 70%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px 20px;
+    }
+
+     form input{
+        margin-bottom: 10px;
+     }
+</style> -->
+
+<!-- end style css  -->
+<!-- <body>
+    <div class="container">
+        <form action="" method="POST">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Create name student" required>
+            <label for="lastN">Last Name</label>
+            <input type="text" name="Last Name" id="LastN" placeholder="create Family name student" required>
+            <label for="brth">Birthday</label>
+            <input type="date" name="Birthday" id="brth">
+            <label for="num">Phone Number</label>
+            <input type="text" name="Number" id="num" placeholder="Enter your phone number">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="zo@uca.ac" required>
+            <label for="insc">Number inscription</label>
+            <input type="number" name="numInsc" id="insc" required placeholder="Enter Num Descrption">
+            <label for="module">Id Module</label>
+            <input type="number" name="id_module" id="module" placeholder="Enter id module">
+
+            <input type="submit" value="Create">
+        </form>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription Étudiant</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 20px;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-header h1 {
+            color: #333;
+            font-size: 24px;
+            margin: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #4285f4;
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.1);
+        }
+        
+        .form-group input[type="date"] {
+            padding: 9px 10px;
+        }
+        
+        .submit-button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-buttonn {
+            margin-top: 10px;
+            background-color: #eb2f09bc;
+             border: none;
+            border-radius: 4px;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-buttonn:hover {
+              background-color:  #ff2a00ed;
+        }
+        
+        .submit-button:hover {
+            background-color: #3367d6;
+        }
+        
+        .top-accent {
+            height: 10px;
+            background-color: #4285f4;
+            border-radius: 8px 8px 0 0;
+            margin: -30px -30px 30px -30px;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .top-accent {
+                margin: -20px -20px 20px -20px;
+            }
+        }
+        body{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body >
+    <div class="container">
+        <div class="top-accent"></div>
+        <div class="form-header">
+            <h1>Inscription Étudiant</h1>
+        </div>
+        <form action="../php/add_admin_student.php" method="post">
+            <div class="form-group">
+                <label for="firstName">Name</label>
+                <input type="text" name="name" id="firstName" placeholder="Entrez votre prénom" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="lastName">Family name</label>
+                <input type="text" name="family_name" id="lastName" placeholder="Entrez votre nom de famille" required>
+            </div>
+
+             <div class="form-group">
+                <label for="pass">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="birthday">Date de naissance</label>
+                <input type="date" name="birthday" id="birthday" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Numéro de téléphone</label>
+                <input type="tel" name="phone" id="phone" placeholder="Entrez votre numéro de téléphone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="exemple@email.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="inscription">Numéro d'inscription</label>
+                <input type="text" name="inscription" id="inscription" placeholder="Entrez votre numéro d'inscription" required>
+            </div>
+            
+             <!-- <div class="form-group">
+                <label for="module">Module</label>
+                <select name="id_module" id="module" required>
+                    <option value="" disabled selected >Sélectionnez un module</option>
+                    <option value="module1">Module 1</option>
+                    <option value="module2">Module 2</option>
+                    <option value="module3">Module 3</option>
+                </select> 
+            </div>
+             -->
+            <button type="submit" class="submit-button">Créer</button>
+        </form>
+         <button type="submit" class="submit-buttonn" onclick="location.href='../php/tableau_bord.php'">Cancel</button>
+    </div>
+</body >
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Entry System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #59d6e6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #38afe3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Grade Entry</h1>
+            <form id="gradeForm">
+                <div class="form-group">
+                    <label for="module_id">Module ID</label>
+                    <input type="text" id="module_id" name="module_id" required>
+                </div>
+                <div class="form-group">
+                    <label for="student_id">Student ID</label>
+                    <input type="text" id="student_id" name="student_id" required>
+                </div>
+                <div class="form-group">
+                    <label for="grade">Grade</label>
+                    <input type="number" id="grade" name="grade" min="0" max="20" step="0.5" required>
+                </div>
+                <div class="form-group">
+                    <label for="semester">Semester</label>
+                    <select id="semester" name="semester" required>
+                        <option value="Fall">2024/2025</option>
+                        <option value="Spring">2023/2024</option>
+                        <option value="Summer">2022/2023</option>
+                        <option value="Winter">2021/2022</option>
+                    </select>
+                </div>
+                <button type="submit">Save</button>
+            </form>
+
+            <!-- Grades display table -->
+            <!-- <h2>Grades List</h2>
+            <table id="gradesTable">
+                <thead>
+                    <tr>
+                        <th>Module ID</th>
+                        <th>Student ID</th>
+                        <th>Grade</th>
+                        <th>Semester</th>
+                    </tr>
+                </thead>
+                <tbody> -->
+                    <!-- Grades will be added here via JavaScript -->
+                <!-- </tbody> -->
+            </table>
+        </div>
+    </div>
+
+    <!-- <script>
+        document.getElementById('gradeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const moduleId = document.getElementById('module_id').value;
+            const studentId = document.getElementById('student_id').value;
+            const grade = document.getElementById('grade').value;
+            const semester = document.getElementById('semester').value;
+            
+            // Add to table
+            const tableBody = document.querySelector('#gradesTable tbody');
+            const newRow = tableBody.insertRow();
+            
+            newRow.innerHTML = `
+                <td>${moduleId}</td>
+                <td>${studentId}</td>
+                <td>${grade}</td>
+                <td>${semester}</td>
+            `;
+            
+            // Reset form
+            document.getElementById('gradeForm').reset();
+        });
+    </script> -->
+</body>
+</html>

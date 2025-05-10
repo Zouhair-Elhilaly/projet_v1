@@ -348,6 +348,7 @@ main {
 
 main .left {
   margin: auto 2%;
+  position: left;
 }
 
 main .left h3 {
@@ -356,9 +357,17 @@ main .left h3 {
   letter-spacing: -1px;
   text-transform: uppercase;
 }
+/* main .left h3:before{
+  position: absolute;
+  font-family: 'Font Awesome 6 Free';
+  position: "/f19d";
+  left: -10px;
+  z-index: 99;
+  font-weight: 999;
+} */
 main .left p {
   line-height: 1.6;
-  color: gray;
+  color: black;
 }
 main .left p:first-letter {
   text-transform: capitalize;
